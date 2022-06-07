@@ -7,14 +7,14 @@
 import UIKit
 
 extension UIViewController {
-    var isModal: Bool {
+    public var isModal: Bool {
         let presentingIsModal = presentingViewController != nil
         let presentingIsNavigation = navigationController?.presentingViewController?.presentedViewController == navigationController
         let presentingIsTabBar = tabBarController?.presentingViewController is UITabBarController
         return presentingIsModal || presentingIsNavigation || presentingIsTabBar
     }
 
-    func topMostViewController() -> UIViewController {
+    public func topMostViewController() -> UIViewController {
         if self.presentedViewController == nil {
             return self
         }

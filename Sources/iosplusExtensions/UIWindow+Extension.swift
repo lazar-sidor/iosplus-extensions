@@ -7,7 +7,7 @@
 import UIKit
 
 extension UIWindow {
-    static func keyWindow() -> UIWindow? {
+    public static func keyWindow() -> UIWindow? {
         if #available(iOS 15, *) {
             let scene = UIApplication.shared.connectedScenes.filter({ $0.activationState == .foregroundActive }).first as? UIWindowScene
             let keyWindow = scene?.keyWindow
